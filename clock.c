@@ -100,6 +100,7 @@ void convertto( const char option, const char format, const struct tm*localtime 
 				printf("%x:%2x:%2x\n", localtime->tm_hour, localtime->tm_min, localtime->tm_sec);
 			break;
 		case 'o': /* octal */
+		printf("\n Time in octal:");
 			if (format=='l')
 				printf("%2o\n%2o\n%2o\n", localtime->tm_hour, localtime->tm_min, localtime->tm_sec);
 			else
