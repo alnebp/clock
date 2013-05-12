@@ -21,7 +21,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <conio.h>
+//#include <conio.h>
 
 typedef char*string;
 
@@ -48,12 +48,12 @@ int main ( int argc, char *argv[] ) {
 
 	time(&clocktime); /* get time frim Epoch */
 	loctime = localtime(&clocktime);
-	loctime->tm_year += 1901; /* Needed because tm_year equals year - 1900 */
+	loctime->tm_year += 1900; /* Needed because tm_year equals year - 1900 */
 	loctime->tm_hour %= 12;
 
 	format = getopt(argc, argv, formatoptions);
 #ifdef DEBUG_FLAG
-	printf("option1 : %d\noption2 : %d\n", option, format);
+	printf("option1 : %d\nformat : %d\n", option, format);
 #endif
 	if ( option == 'h' )
 		puts(licence);
@@ -63,13 +63,15 @@ int main ( int argc, char *argv[] ) {
 	return EXIT_SUCCESS;
 }
 
-
 void convertto( const char option, const char format, const struct tm*localtime ) {
 	register int i;
-	printf("\nConvert Time");
+	printf("\n Time in Binary:");
+	scanf("%d",option);
+	//if(option>3)
+	//break;
 	switch (option) {
 		default:
-		case 'b': /* bonary */
+		case 'b': /* binary */
 			{
 				/* Print hours */
 				printf(" ");
@@ -90,6 +92,7 @@ void convertto( const char option, const char format, const struct tm*localtime 
 				puts("");
 				break; 
 			}
+		printf("\n Time in hex:" );
 		case 'x': /* hex */
 			if (format=='l')
 				printf("%x\n%2x\n%2x\n", localtime->tm_hour, localtime->tm_min, localtime->tm_sec);
