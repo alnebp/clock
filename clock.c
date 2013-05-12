@@ -107,6 +107,7 @@ void convertto( const char option, const char format, const struct tm*localtime 
 				printf("%2o:%2o:%2o\n", localtime->tm_hour, localtime->tm_min, localtime->tm_sec);
 			break;
 		case 't': /* */
+		printf("\n Time in Decimal");
 			printf("%d/%d/%d %d:%d:%d\n", localtime->tm_mday, localtime->tm_mon, localtime->tm_year, localtime->tm_hour, localtime->tm_min, localtime->tm_sec);
 			break;
 	}
