@@ -65,14 +65,15 @@ int main ( int argc, char *argv[] ) {
 
 void convertto( const char option, const char format, const struct tm*localtime ) {
 	register int i;
-	printf("\n Time in Binary:");
-	scanf("%d",option);
+	//printf("\n Time in Binary:");
+	//scanf("%d",option);
 	//if(option>3)
 	//break;
 	switch (option) {
-		default:
+		//default:
 		case 'b': /* binary */
-			{
+			{printf("\n Time in Binary:");
+				
 				/* Print hours */
 				printf(" ");
 				for (i=(1<<4); i>=1; i>>=1)
@@ -106,6 +107,7 @@ void convertto( const char option, const char format, const struct tm*localtime 
 			else
 				printf("%2o:%2o:%2o\n", localtime->tm_hour, localtime->tm_min, localtime->tm_sec);
 			break;
+			default:
 		case 't': /* */
 		printf("\n Time in Decimal with date:\n");
 			printf("%d/%d/%d %d:%d:%d\n", localtime->tm_mday, localtime->tm_mon, localtime->tm_year, localtime->tm_hour, localtime->tm_min, localtime->tm_sec);
