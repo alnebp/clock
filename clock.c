@@ -47,7 +47,7 @@ int main ( int argc, char *argv[] ) {
 
 	time(&clocktime); /* get time frim Epoch */
 	loctime = localtime(&clocktime);
-	loctime->tm_year += 1900; /* Needed because tm_year equals year - 1900 */
+	loctime->tm_year += 1901; /* Needed because tm_year equals year - 1900 */
 	loctime->tm_hour %= 12;
 
 	format = getopt(argc, argv, formatoptions);
