@@ -65,6 +65,7 @@ int main ( int argc, char *argv[] ) {
 
 void convertto( const char option, const char format, const struct tm*localtime ) {
 	register int i;
+	printf("\nConvert Time");
 	switch (option) {
 		default:
 		case 'b': /* bonary */
