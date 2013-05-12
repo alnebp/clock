@@ -40,8 +40,10 @@ void convertto( const char option, const char format, const struct tm*localtime 
 int main ( int argc, char *argv[] ) {
 	int option = -1;
 	int format = -1;
+	printf("\nTime in Hr:Min:Sec");
 	if (argc>1)
 		option = getopt(argc, argv, options);
+		
 
 	time(&clocktime); /* get time frim Epoch */
 	loctime = localtime(&clocktime);
